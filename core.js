@@ -146,7 +146,7 @@ function sendMail() {
 }
 
 function haalNummerOp() {
-    fetch('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=motersk313&api_key=aa6ae5a1eae44199b41740dca8db33a3&format=json').then(
+    fetch('https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=motersk313&api_key=aa6ae5a1eae44199b41740dca8db33a3&format=json').then(
         function (response) {
             return response.json();
         }
