@@ -20,7 +20,7 @@ body {
     //background-color: #f2f2f2;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 16.6666% auto;
+    grid-template-rows: 16.6666vh auto;
     overflow-x: hidden;
     #destroyer {
         position: fixed;
@@ -67,7 +67,7 @@ body {
                 //background-color: black;
                 top: 5%;
                 right: 4%;
-                background-image: url(../_imgs/cross.svg);
+                background-image: url(../imgs/cross.svg);
                 background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -238,6 +238,11 @@ body {
             figure {
                 grid-column: 2/3;
                 grid-row: 2/3;
+                background-image: url(../imgs/sjoerdklatserColor.jpg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                
                 img {
                     // box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.1);
                     border-radius: 5px;
