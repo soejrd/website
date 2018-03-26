@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css?family=Catamaran:300,400|Lato:400,700,900|Poppins:400,500,700");
+* {
+  margin: 0;
+  padding: 0;
+  transition-duration: 200ms; }
+
+body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 16px 4fr 16px;
+  grid-template-rows: 13.3333vh auto;
+  overflow-x: hidden; }
+  body #destroyer {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    transition-duration: 400ms;
+    display: grid;
+    grid-template-columns: 16px 1fr 1fr 16px;
+    visibility: hidden;
+    opacity: 0; }
+    body #destroyer .left {
+      grid-column: 2/4;
+      width: 100%;
+      font-family: 'FutLT', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%; }
+      body #destroyer .left a {
+        text-decoration: none;
+        text-transform: none;
+        text-align: left;
+        display: block;
+        color: #333333;
+        font-size: 18px;
+        line-height: 48px;
+        transition-duration: 200ms; }
+      body #destroyer .left a:hover {
+        color: #FFCC1E; }
+    body #destroyer .right {
+      margin-top: 16px;
+      grid-column: 2/4;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      body #destroyer .right #schluss {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 5%;
+        right: 4%;
+        background-image: url(../_imgs/cross.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.15;
+        cursor: pointer; }
+      body #destroyer .right #schluss:hover {
+        opacity: 0.5; }
+      body #destroyer .right form {
+        height: 100%;
+        width: 100%; }
+        body #destroyer .right form input {
+          display: block;
+          width: calc(100% - 12px);
+          height: 50px;
+          border-radius: 10px;
+          border: 1px solid #BDBDBD;
+          margin-bottom: 24px;
+          font-family: 'Catamaran', sans-serif;
+          font-size: 18px;
+          padding-left: 12px;
+          color: #333333; }
+        body #destroyer .right form textarea {
+          border: 1px solid #BDBDBD;
+          border-radius: 10px;
+          display: block;
+          width: calc(100% - 24px);
+          height: 33.33vh;
+          font-family: 'Catamaran', sans-serif;
+          font-size: 18px;
+          color: #333333;
+          padding: 12px; }
+        body #destroyer .right form button {
+          margin-top: 24px;
+          width: 100%;
+          height: 50px;
+          border-radius: 10px;
+          background-color: rgba(0, 0, 0, 0.25);
+          border: none;
+          color: white;
+          font-family: 'FutLT', sans-serif;
+          cursor: pointer;
+          font-size: 16px;
+          transition-duration: 200ms; }
+        body #destroyer .right form button:hover {
+          background-color: rgba(0, 0, 0, 0.5); }
+        body #destroyer .right form ::placeholder {
+          color: #bdbdbd; }
+  body header {
+    grid-column: 1/4;
+    background-color: white;
+    grid-row: 1/2;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; }
+    body header nav {
+      display: block;
+      width: calc(100% - 32px);
+      max-width: 1080px;
+      margin: 0 auto; }
+      body header nav div.wrapper {
+        grid-row: 2/3;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 8px; }
+        body header nav div.wrapper a {
+          align-self: flex-start;
+          font-family: 'FutLT', sans-serif;
+          text-decoration: none;
+          color: #333333;
+          font-size: 4vmax;
+          font-weight: 900; }
+          body header nav div.wrapper a span:first-of-type {
+            color: #FFCC1E; }
+          body header nav div.wrapper a span:nth-of-type(2) {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            color: #828282;
+            display: block;
+            font-weight: 400; }
+        body header nav div.wrapper a#escapeHatch {
+          transition-duration: 200ms; }
+        body header nav div.wrapper a#escapeHatch:hover {
+          color: #FFCC1E; }
+        body header nav div.wrapper ul {
+          align-self: flex-end;
+          text-align: right;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: flex-end; }
+          body header nav div.wrapper ul li {
+            list-style-type: none;
+            display: inline;
+            margin-left: 75%; }
+            body header nav div.wrapper ul li a {
+              transition-duration: 200ms;
+              font-family: 'Poppins', sans-serif;
+              font-size: 16px;
+              text-transform: lowercase;
+              font-weight: 400;
+              color: black; }
+  body .swiper-container {
+    grid-column: 1/3;
+    z-index: 0;
+    width: 100%;
+    display: block;
+    height: calc(80vh - 16px);
+    margin-bottom: 16px; }
+    body .swiper-container .swiper-wrapper {
+      width: 100%;
+      height: 100%; }
+      body .swiper-container .swiper-wrapper .swiper-slide {
+        width: 100%;
+        height: 100%;
+        background-color: #f2f2f2;
+        background-image: url(../_imgs/spacexbannerMobile.jpg);
+        background-size: cover;
+        background-position: right;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template-columns: 16px 1fr; }
+        body .swiper-container .swiper-wrapper .swiper-slide .container {
+          grid-column: 2/3;
+          width: 100%;
+          transition-duration: 1000ms;
+          margin-left: -3%;
+          transform: translateX(3%);
+          display: flex;
+          flex-direction: column;
+          justify-content: center; }
+          body .swiper-container .swiper-wrapper .swiper-slide .container h1 {
+            font-family: 'FutLT', sans-serif;
+            font-weight: bolder;
+            font-size: 6vmax;
+            color: #333333; }
+          body .swiper-container .swiper-wrapper .swiper-slide .container h2 {
+            margin-top: 4px;
+            font-family: 'FutLT', sans-serif;
+            font-weight: 600;
+            font-size: 3vmax;
+            color: white; }
+          body .swiper-container .swiper-wrapper .swiper-slide .container p {
+            margin-top: 16px;
+            font-family: 'Catamaran', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            color: #333333;
+            max-width: calc(100% - 16px); }
+          body .swiper-container .swiper-wrapper .swiper-slide .container a {
+            text-align: center;
+            display: inline-block;
+            width: 135px;
+            line-height: 42px;
+            text-decoration: none;
+            background-color: #333333;
+            color: white;
+            font-family: 'FutLT', sans-serif;
+            font-weight: 300;
+            vertical-align: middle;
+            border-radius: 5px;
+            margin-top: 24px;
+            transition-duration: 240ms;
+            opacity: 0.75; }
+          body .swiper-container .swiper-wrapper .swiper-slide .container a:hover {
+            transform: translateY(-2px);
+            opacity: 1; }
+      body .swiper-container .swiper-wrapper .nr2 {
+        background-image: url(../_imgs/graphicDesignBanner.png); }
+        body .swiper-container .swiper-wrapper .nr2 .container h1,
+        body .swiper-container .swiper-wrapper .nr2 .container p {
+          color: black; }
+        body .swiper-container .swiper-wrapper .nr2 .container h2 {
+          color: white; }
+  body section.over {
+    margin-top: 10vh;
+    grid-column: 2/3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    body section.over .wrapper {
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto 2fr 1.5fr;
+      grid-template-rows: auto auto;
+      grid-gap: 8px; }
+      body section.over .wrapper h1 {
+        font-family: 'FutLT', sans-serif;
+        font-size: 42px;
+        color: #333333;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        font-kerning: auto; }
+      body section.over .wrapper .container {
+        margin-top: 8px;
+        grid-column: 1/4;
+        grid-row: 2/3; }
+        body section.over .wrapper .container p {
+          text-align: justify;
+          font-family: 'Catamaran', sans-serif;
+          font-size: 18px;
+          font-weight: 400;
+          display: block;
+          hyphens: manual; }
+        body section.over .wrapper .container a {
+          margin-top: 24px;
+          font-family: 'FutLT', sans-serif;
+          font-weight: 400;
+          color: white;
+          line-height: 40px;
+          text-decoration: none;
+          background-color: #C2C2C2;
+          display: block;
+          width: 175px;
+          text-align: center;
+          text-transform: lowercase;
+          border-radius: 5px;
+          transition-duration: 400ms; }
+        body section.over .wrapper .container a:hover {
+          transform: translateY(-2px);
+          background-color: #FFCC1E; }
+      body section.over .wrapper figure {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        width: 100%;
+        height: 100%;
+        background-image: url(../_imgs/sjoerdklatser.jpg);
+        background-size: cover;
+        background-position: right;
+        background-repeat: no-repeat;
+        border-radius: 10px; }
+  body footer {
+    height: auto;
+    grid-column: 1/4;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    body footer h3 {
+      margin-top: 64px;
+      text-align: center;
+      font-family: 'Catamaran', sans-serif;
+      font-size: 21px;
+      font-weight: 300; }
+    body footer div {
+      height: 48px;
+      width: 48px;
+      background-image: url(../_imgs/Arrow-down.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: brightness(4);
+      margin-bottom: 128px; }
+
+/*# sourceMappingURL=styleMobile.css.map */

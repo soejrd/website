@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'FutLT';
+    src: url('FuturaLT-Book.woff2') format('woff2'), url('FuturaLT-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FutLT';
+    src: url('FuturaLT-Heavy.woff2') format('woff2'), url('FuturaLT-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
