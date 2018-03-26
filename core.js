@@ -120,6 +120,7 @@ function schluss(d) {
     } else {
         sluit();
     }
+
     function sluit() {
         a.style.opacity = 0;
         a.style.visibility = 'hidden';
@@ -145,7 +146,11 @@ function sendMail() {
 }
 
 function haalNummerOp() {
-    $.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=motersk313&api_key=aa6ae5a1eae44199b41740dca8db33a3&format=json', function (data) {
+    fetch('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=motersk313&api_key=aa6ae5a1eae44199b41740dca8db33a3&format=json').then(
+        function (response) {
+            return response.json();
+        }
+    ).then(function (data) {
         var containers = document.getElementById('lastFmContainer');
         for (i = 0; i < 6; i++) {
             var track = data.recenttracks.track[i].name;
@@ -156,7 +161,11 @@ function haalNummerOp() {
             containers.children[i].children[0].children[2].innerHTML = artiest;
             containers.children[i].children[1].style.backgroundImage = 'url(' + image + ')';
             containers.children[i].children[1].href = link;
-        };
+        }
         $(".placeholder").remove();
     })
+}
+
+function test() {
+
 }
