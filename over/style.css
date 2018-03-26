@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Catamaran:300,400|Lato:400,700,900|Poppins:400,500,700");
+@import url(../style/headerDesktop.css);
 * {
   margin: 0;
   padding: 0;
@@ -24,12 +25,12 @@ body {
     transition-duration: 400ms;
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 1fr;
-    visibility: visible;
-    opacity: 1; }
+    visibility: hidden;
+    opacity: 0; }
     body #destroyer .left {
       grid-column: 2/3;
       width: 100%;
-      font-family: 'FutLT', sans-serif;
+      font-family: 'futura_ltbook', sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -102,92 +103,33 @@ body {
           flex-direction: column;
           justify-content: center; }
           body #destroyer .right form div#sendButton span {
-            font-family: 'FutLT', sans-serif;
+            font-family: 'futura_ltbook', sans-serif;
             font-size: 16px;
             text-align: center; }
         body #destroyer .right form button:hover {
           background-color: rgba(0, 0, 0, 0.5); }
         body #destroyer .right form ::placeholder {
           color: #bdbdbd; }
-  body header {
-    grid-column: 1/4;
-    background-color: white;
-    grid-row: 1/2;
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; }
-    body header nav {
-      display: block;
-      width: 66.66%;
-      max-width: 1080px;
-      margin: 0 auto; }
-      body header nav div.wrapper {
-        grid-row: 2/3;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 16px; }
-        body header nav div.wrapper a {
-          align-self: flex-start;
-          font-family: 'FutLT', sans-serif;
-          text-decoration: none;
-          color: #333333;
-          font-size: 36px;
-          font-weight: 900; }
-          body header nav div.wrapper a span:first-of-type {
-            color: #FFCC1E; }
-          body header nav div.wrapper a span:nth-of-type(2) {
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-            color: #828282;
-            display: block;
-            font-weight: 400; }
-        body header nav div.wrapper a#escapeHatch {
-          transition-duration: 200ms;
-          width: 50%; }
-        body header nav div.wrapper a#escapeHatch:hover {
-          color: #FFCC1E; }
-        body header nav div.wrapper ul {
-          align-self: flex-end;
-          text-align: right;
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-end;
-          align-items: flex-end; }
-          body header nav div.wrapper ul li {
-            list-style-type: none;
-            display: inline;
-            margin-left: 75px; }
-            body header nav div.wrapper ul li a {
-              transition-duration: 200ms;
-              font-family: 'Poppins', sans-serif;
-              font-size: 16px;
-              text-transform: lowercase;
-              font-weight: 400;
-              color: black; }
-  body section.over {
+  body article.over {
     grid-column: 2/3;
     max-width: 1080px;
     margin: 0 auto; }
-    body section.over .container {
+    body article.over .container {
       display: grid;
       grid-template-columns: 2fr 1fr;
       grid-template-rows: auto auto;
       grid-column-gap: 15vmin;
       margin-bottom: 64px; }
-      body section.over .container h1#overHeader {
+      body article.over .container h1#overHeader {
         display: inline;
         grid-row: 1/2;
         grid-column: 1/3;
-        font-family: 'FutLT', sans-serif;
+        font-family: 'futura_ltbook', sans-serif;
         font-size: 48px;
         font-weight: 400;
         color: #333333;
         margin-top: 64px; }
-      body section.over .container p#over {
+      body article.over .container p#over {
         margin-top: 8px;
         text-align: justify;
         grid-column: 1/2;
@@ -196,14 +138,14 @@ body {
         font-family: 'Catamaran', sans-serif;
         font-weight: 300;
         color: #333333; }
-      body section.over .container figure {
+      body article.over .container figure {
         grid-column: 2/3;
         grid-row: 2/3;
         background-image: url(../imgs/sjoerdklatserColor.jpg);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat; }
-        body section.over .container figure img {
+        body article.over .container figure img {
           border-radius: 5px;
           width: 100%;
           height: auto; }
@@ -220,7 +162,7 @@ body {
     body section.vrijeTijd .left {
       grid-column: 1/2; }
       body section.vrijeTijd .left h2 {
-        font-family: 'FutLT', sans-serif;
+        font-family: 'futura_ltbook', sans-serif;
         font-size: 48px;
         font-weight: 400;
         color: #333333;
