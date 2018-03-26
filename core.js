@@ -107,7 +107,7 @@ function contactElement(b) {
 function schluss(d) {
     var a = document.getElementById('destroyer');
     var b = document.getElementById('contactButton');
-    var c = document.getElementById('sendButton');
+    var c = document.getElementById('sendButtonText');
     if (d) {
         c.innerHTML = 'Versturen...';
         setTimeout(function () {
@@ -143,7 +143,12 @@ function sendMail() {
         message_html: berichtClean,
         verzender: verzender,
     });
+    console.log('mail verstuurd')
 }
+
+$("#formulier").submit(function (e) {
+    e.preventDefault();
+});
 
 function haalNummerOp() {
     fetch('https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=motersk313&api_key=aa6ae5a1eae44199b41740dca8db33a3&format=json').then(

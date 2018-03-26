@@ -24,8 +24,8 @@ body {
     transition-duration: 400ms;
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 1fr;
-    visibility: hidden;
-    opacity: 0; }
+    visibility: visible;
+    opacity: 1; }
     body #destroyer .left {
       grid-column: 2/3;
       width: 100%;
@@ -88,7 +88,7 @@ body {
           font-size: 18px;
           color: #333333;
           padding: 12px; }
-        body #destroyer .right form button {
+        body #destroyer .right form div#sendButton {
           margin-top: 24px;
           width: 30%;
           height: 50px;
@@ -96,10 +96,15 @@ body {
           background-color: rgba(0, 0, 0, 0.25);
           border: none;
           color: white;
-          font-family: 'FutLT', sans-serif;
           cursor: pointer;
-          font-size: 16px;
-          transition-duration: 200ms; }
+          transition-duration: 200ms;
+          display: flex;
+          flex-direction: column;
+          justify-content: center; }
+          body #destroyer .right form div#sendButton span {
+            font-family: 'FutLT', sans-serif;
+            font-size: 16px;
+            text-align: center; }
         body #destroyer .right form button:hover {
           background-color: rgba(0, 0, 0, 0.5); }
         body #destroyer .right form ::placeholder {

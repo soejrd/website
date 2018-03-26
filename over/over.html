@@ -19,7 +19,7 @@
         (function() {
             emailjs.init("user_PKWC8CcRNyAg8kc27Eat3");
         })();
-
+        console.log('script wordt gerunt')
     </script>
     <link rel="stylesheet" href="../contactButton/contactButton.css">
     <script>
@@ -159,7 +159,7 @@
                 <input type="text" placeholder="uw naam" id="naam">
                 <input type="text" placeholder="uw emailadres" id="mailadres">
                 <textarea name="" id="bericht" cols="30" rows="10" placeholder="uw bericht"></textarea>
-                <button onclick="schluss(this), sendMail()" id="sendButton">Verstuur</button>
+                <div onclick="schluss(this), sendMail()" id="sendButton"><span id="sendButtonText">Verstuur</span></div>
             </form>
             <div id="schluss" onclick="schluss()"></div>
         </div>
