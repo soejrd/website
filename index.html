@@ -17,6 +17,7 @@
         (function() {
             emailjs.init("user_PKWC8CcRNyAg8kc27Eat3");
         })();
+
     </script>
 
 
@@ -41,7 +42,7 @@
                     <span>Den Haag - Haarlem</span>
                 </a>
                 <ul>
-                    <li><a href="werk.html" onmouseover="fade(this)" class="navItems" onmouseout="fadeBack()">Werk</a></li>
+                    <li><a href="./werk/werk.html" onmouseover="fade(this)" class="navItems" onmouseout="fadeBack()">Werk</a></li>
                     <li><a href="./over/over.html" onmouseover="fade(this)" class="navItems" onmouseout="fadeBack()">Over</a></li>
                 </ul>
             </div>
@@ -71,6 +72,7 @@
     <section class="over">
         <div class="wrapper" data-aos-duration="600">
             <div class="container" data-aos="fade">
+               <h1>Introductie</h1>
                 <p>Ik ben Sjoerd, 20 jaar, 2<sup>e</sup> jaars Communicatie &amp; Multimedia design -student aan de Haagse Hogeschool. Ik ben altijd al erg geïnteresseerd geweest in digitaal ontwerp en interactie, en kwam zo terecht op CMD. Hier heb ik mij de afgelopen 1.5 jaar kunnen ontwikkelen op het gebied van UX-design. Ik streef dan ook altijd naar gebruiksvriendelijkheid in een mooi jasje. Verder zoek ik nog een stage van september 2018 tot january 2019.</p>
                 <a href="./over/over.html">Lees verder</a>
             </div>
@@ -81,7 +83,6 @@
 
         <h3 data-aos="fade">Neem gelijk contact met me op</h3>
         <div data-aos="fade" id="downArrow"></div>
-
     </footer>
     <div id="destroyer">
         <div class="left">
@@ -89,11 +90,11 @@
             <a href="mailto:sjoerdklatser@mail.com">sjoerdklatser@mail.com</a>
         </div>
         <div class="right">
-            <form action="#" autocomplete="off" id="formulier">
+            <form action="#" autocomplete="off">
                 <input type="text" placeholder="uw naam" id="naam">
                 <input type="text" placeholder="uw emailadres" id="mailadres">
-                <textarea name="textformmm" id="bericht" cols="30" rows="10" placeholder="uw bericht"></textarea>
-                <div onclick="schluss(this), sendMail()" id="sendButton">Verstuur</div>
+                <textarea name="" id="bericht" cols="30" rows="10" placeholder="uw bericht"></textarea>
+                <div onclick="schluss(this), sendMail()" id="sendButton"><span id="sendButtonText">Verstuur</span></div>
             </form>
             <div id="schluss" onclick="schluss()"></div>
         </div>
@@ -102,7 +103,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="./contactButton/contactButton.js"></script>
     <script src="./core.js"></script>
-
 </body>
 
 </html>

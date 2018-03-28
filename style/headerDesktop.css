@@ -33,7 +33,7 @@ header {
         text-decoration: none;
         color: #333333;
         font-size: 36px;
-        font-weight: 900;
+        font-weight: 400;
         transition-duration: 200ms;
         width: 50%; }
       header nav div.wrapper a#escapeHatch:hover {

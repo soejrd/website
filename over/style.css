@@ -144,7 +144,8 @@ body {
         background-image: url(../imgs/sjoerdklatserColor.jpg);
         background-position: center;
         background-size: cover;
-        background-repeat: no-repeat; }
+        background-repeat: no-repeat;
+        background-color: #f2f2f2; }
         body article.over .container figure img {
           border-radius: 5px;
           width: 100%;

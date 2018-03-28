@@ -248,7 +248,13 @@ body {
       body section.over .wrapper .container {
         grid-column: 2/3;
         grid-row: 1/2; }
+        body section.over .wrapper .container h1 {
+          font-family: 'futura_ltbook', sans-serif;
+          font-size: 48px;
+          font-weight: 400;
+          color: #333333; }
         body section.over .wrapper .container p {
+          margin-top: 8px;
           text-align: justify;
           font-family: 'Catamaran', sans-serif;
           font-size: 18px;
@@ -297,6 +303,7 @@ body {
       font-size: 21px;
       font-weight: 300; }
     body footer div {
+      margin-bottom: 15vh;
       height: 48px;
       width: 48px;
       background-image: url(imgs/Arrow-down.svg);

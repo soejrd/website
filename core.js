@@ -65,10 +65,9 @@ function swiperBoi() {
 $(window).scroll(function () {
     var b = document.getElementById('contactButton');
     if ($(window).scrollTop() + $(window).height() > $(document).height() - 75) {
-
         b.style.transformOrigin = 'center';
         b.style.transitionDuration = '1s';
-        b.style.marginRight = 'calc(50% - 32px)';
+        b.style.marginRight = 'calc(50% - 48px)';
         setTimeout(function () {
             b.style.transitionDuration = '200ms';
         }, 1000)
