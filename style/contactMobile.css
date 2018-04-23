@@ -1,22 +1,21 @@
 #destroyer {
   position: fixed;
-  z-index: 4;
   height: 100vh;
   width: 100vw;
   background-color: white;
   transition-duration: 400ms;
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-columns: 16px 1fr 1fr 16px;
   visibility: hidden;
   opacity: 0; }
   #destroyer .left {
-    grid-column: 2/3;
+    grid-column: 2/4;
     width: 100%;
-    font-family: 'futura_ltbook', sans-serif;
+    font-family: 'futuralt_book', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 75%; }
+    height: 100%; }
     #destroyer .left a {
       text-decoration: none;
       text-transform: none;
@@ -29,7 +28,8 @@
     #destroyer .left a:hover {
       color: #FFCC1E; }
   #destroyer .right {
-    grid-column: 3/4;
+    margin-top: 16px;
+    grid-column: 2/4;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -49,10 +49,11 @@
     #destroyer .right #schluss:hover {
       opacity: 0.5; }
     #destroyer .right form {
+      height: 100%;
       width: 100%; }
       #destroyer .right form input {
         display: block;
-        width: 100%;
+        width: calc(100% - 12px);
         height: 50px;
         border-radius: 10px;
         border: 1px solid #BDBDBD;
@@ -65,32 +66,32 @@
         border: 1px solid #BDBDBD;
         border-radius: 10px;
         display: block;
-        width: calc(100% - 12px);
+        width: calc(100% - 24px);
         height: 33.33vh;
         font-family: 'Catamaran', sans-serif;
         font-size: 18px;
         color: #333333;
         padding: 12px; }
-      #destroyer .right form div#sendButton {
+      #destroyer .right form div {
         margin-top: 24px;
-        width: 30%;
+        width: 100%;
         height: 50px;
         border-radius: 10px;
         background-color: #FFCC1E;
         border: none;
         color: white;
+        font-family: 'futuralt_book', sans-serif;
         cursor: pointer;
+        font-size: 16px;
         transition-duration: 200ms;
         display: flex;
         flex-direction: column;
         justify-content: center; }
-        #destroyer .right form div#sendButton span {
-          font-family: 'futura_ltbook', sans-serif;
-          font-size: 16px;
-          text-align: center; }
-      #destroyer .right form div#sendButton:hover {
-        filter: brightness(0.9); }
+      #destroyer .right form span {
+        text-align: center; }
+      #destroyer .right form div:hover {
+        filter: opacity(0.75); }
       #destroyer .right form ::placeholder {
         color: #bdbdbd; }
 
-/*# sourceMappingURL=contactDesktop.css.map */
+/*# sourceMappingURL=contactMobile.css.map */

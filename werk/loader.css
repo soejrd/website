@@ -1,0 +1,2 @@
+@import url("./styleMobile.css") (max-width: 640px);
+@import url("./style.css") (min-width: 641px);

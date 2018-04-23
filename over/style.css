@@ -1,5 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Catamaran:300,400|Lato:400,700,900|Poppins:400,500,700");
+@import url(../style/contactDesktop.css);
 @import url(../style/headerDesktop.css);
+@keyframes fadeInUp {
+  from {
+    transform: translateY(8px);
+    opacity: 0; }
+  to {
+    transform: translateY(0px);
+    opacity: 1; } }
+@keyframes fadeInRight {
+  from {
+    transform: translateX(8px);
+    opacity: 0; }
+  to {
+    transform: translateY(0px);
+    opacity: 1; } }
 * {
   margin: 0;
   padding: 0;
@@ -17,99 +32,6 @@ body {
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-rows: 16.6666vh auto;
   overflow-x: hidden; }
-  body #destroyer {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
-    transition-duration: 400ms;
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr 1fr;
-    visibility: hidden;
-    opacity: 0; }
-    body #destroyer .left {
-      grid-column: 2/3;
-      width: 100%;
-      font-family: 'futura_ltbook', sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      height: 75%; }
-      body #destroyer .left a {
-        text-decoration: none;
-        text-transform: none;
-        text-align: left;
-        display: block;
-        color: #333333;
-        font-size: 18px;
-        line-height: 48px;
-        transition-duration: 200ms; }
-      body #destroyer .left a:hover {
-        color: #FFCC1E; }
-    body #destroyer .right {
-      grid-column: 3/4;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; }
-      body #destroyer .right #schluss {
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        top: 5%;
-        right: 4%;
-        background-image: url(../imgs/cross.svg);
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0.15;
-        cursor: pointer; }
-      body #destroyer .right #schluss:hover {
-        opacity: 0.5; }
-      body #destroyer .right form {
-        width: 100%; }
-        body #destroyer .right form input {
-          display: block;
-          width: 100%;
-          height: 50px;
-          border-radius: 10px;
-          border: 1px solid #BDBDBD;
-          margin-bottom: 24px;
-          font-family: 'Catamaran', sans-serif;
-          font-size: 18px;
-          padding-left: 12px;
-          color: #333333; }
-        body #destroyer .right form textarea {
-          border: 1px solid #BDBDBD;
-          border-radius: 10px;
-          display: block;
-          width: calc(100% - 12px);
-          height: 33.33vh;
-          font-family: 'Catamaran', sans-serif;
-          font-size: 18px;
-          color: #333333;
-          padding: 12px; }
-        body #destroyer .right form div#sendButton {
-          margin-top: 24px;
-          width: 30%;
-          height: 50px;
-          border-radius: 10px;
-          background-color: rgba(0, 0, 0, 0.25);
-          border: none;
-          color: white;
-          cursor: pointer;
-          transition-duration: 200ms;
-          display: flex;
-          flex-direction: column;
-          justify-content: center; }
-          body #destroyer .right form div#sendButton span {
-            font-family: 'futura_ltbook', sans-serif;
-            font-size: 16px;
-            text-align: center; }
-        body #destroyer .right form button:hover {
-          background-color: rgba(0, 0, 0, 0.5); }
-        body #destroyer .right form ::placeholder {
-          color: #bdbdbd; }
   body article.over {
     grid-column: 2/3;
     max-width: 1080px;
@@ -121,6 +43,7 @@ body {
       grid-column-gap: 15vmin;
       margin-bottom: 64px; }
       body article.over .container h1#overHeader {
+        animation: fadeInUp 400ms;
         display: inline;
         grid-row: 1/2;
         grid-column: 1/3;
@@ -130,6 +53,10 @@ body {
         color: #333333;
         margin-top: 64px; }
       body article.over .container p#over {
+        animation: fadeInUp 800ms;
+        animation-delay: 200ms;
+        opacity: 0;
+        animation-fill-mode: forwards;
         margin-top: 8px;
         text-align: justify;
         grid-column: 1/2;
@@ -145,7 +72,11 @@ body {
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        background-color: #f2f2f2; }
+        background-color: #f2f2f2;
+        animation: fadeInRight 800ms;
+        animation-delay: 200ms;
+        animation-fill-mode: forwards;
+        opacity: 0; }
         body article.over .container figure img {
           border-radius: 5px;
           width: 100%;
@@ -167,8 +98,13 @@ body {
         font-size: 48px;
         font-weight: 400;
         color: #333333;
-        margin-bottom: 16px; }
+        margin-bottom: 16px;
+        animation: fadeInUp 800ms;
+        animation-delay: 400ms;
+        animation-fill-mode: forwards;
+        opacity: 0; }
       body section.vrijeTijd .left p {
+        animation: fadeInUp 800ms;
         width: 100%;
         font-size: 18px;
         font-family: 'Catamaran', sans-serif;

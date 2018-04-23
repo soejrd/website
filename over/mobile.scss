@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Catamaran:300,400|Lato:400,700,900|Poppins:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400|Lato:400,700,900|Poppins:400,500,700');
 @import url(../style/headerMobile.css);
+@import url(../style/contactMobile.css);
 $black: #333333;
 $color: #FFCC1E;
 $placeholder: #f2f2f2;
@@ -11,20 +12,47 @@ $placeholder: #f2f2f2;
     -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes fadeInUp {
+    from {
+        transform: translateY(8px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        transform: translateX(8px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 h1,
 h2 {
     display: inline;
     font-family: 'futura_ltbook', sans-serif;
-    font-size: 48px;
+    font-size: 32px;
     font-weight: 400;
     color: $black;
 }
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
 
 p {
-    font-size: 18px;
-    font-family: 'Catamaran', sans-serif;
+    font-size: 16px;
+    line-height: calc(16px * 1.6);
+    font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    color: $black;
+    color: black;
     text-align: justify;
 }
 
@@ -40,115 +68,6 @@ body {
     grid-template-columns: 16px 4fr 16px;
     grid-template-rows: 13.3333% auto;
     overflow-x: hidden;
-    #destroyer {
-        position: fixed;
-        height: 100vh;
-        width: 100vw;
-        background-color: rgba(255, 255, 255, 1);
-        transition-duration: 400ms;
-        display: grid;
-        grid-template-columns: 1fr 2fr 2fr 1fr;
-        visibility: hidden;
-        opacity: 0;
-        .left {
-            grid-column: 2/3;
-            width: 100%;
-            font-family: 'futura_ltbook', sans-serif;
-            ;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            height: 75%;
-            a {
-                text-decoration: none;
-                text-transform: none;
-                text-align: left;
-                display: block;
-                color: $black;
-                font-size: 18px;
-                line-height: 48px;
-                transition-duration: 200ms;
-            }
-            a:hover {
-                color: $color;
-            }
-        }
-        .right {
-            grid-column: 3/4;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            #schluss {
-                width: 30px;
-                height: 30px;
-                position: absolute;
-                //background-color: black;
-                top: 5%;
-                right: 4%;
-                background-image: url(../imgs/cross.svg);
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                opacity: 0.15;
-                cursor: pointer;
-            }
-            #schluss:hover {
-                opacity: 0.5;
-            }
-            form {
-                width: 100%;
-                input {
-                    display: block;
-                    width: 100%;
-                    height: 50px;
-                    border-radius: 10px;
-                    border: 1px solid #BDBDBD;
-                    margin-bottom: 24px;
-                    font-family: 'Catamaran', sans-serif;
-                    font-size: 18px;
-                    padding-left: 12px;
-                    color: $black;
-                }
-                textarea {
-                    border: 1px solid #BDBDBD;
-                    border-radius: 10px;
-                    display: block;
-                    width: calc(100% - 12px);
-                    height: 33.33vh;
-                    font-family: 'Catamaran', sans-serif;
-                    font-size: 18px;
-                    color: $black;
-                    padding: 12px;
-                }
-                div#sendButton {
-                    margin-top: 24px;
-                    width: 30%;
-                    height: 50px;
-                    border-radius: 10px;
-                    background-color: rgba(0, 0, 0, 0.25);
-                    border: none;
-                    color: white;
-                    cursor: pointer;
-                    transition-duration: 200ms;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    span {
-                        font-family: 'futura_ltbook', sans-serif;
-                        font-size: 16px;
-                        text-align: center;
-                    }
-                }
-                button:hover {
-                    background-color: rgba(0, 0, 0, 0.5);
-                }
-                 ::placeholder {
-                    color: #bdbdbd;
-                }
-            }
-        }
-    }
     article.over {
         grid-column: 2/3;
         max-width: 1080px;
@@ -156,31 +75,45 @@ body {
         //background-color: red;
         .container {
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
+            grid-template-columns: 1fr 2fr;
             grid-template-rows: auto auto;
-            grid-column-gap: 15vmin;
-            //margin-bottom: 64px;
+            grid-column-gap: 8px;
+            margin-top: 16px;
             h1#overHeader {
                 display: inline;
                 grid-row: 1/2;
                 grid-column: 1/3;
-                margin-top: 48px;
+                margin-top: 108px;
+                //z-index: 1;
+                margin-bottom: 16px;
+                color: $black;
+                font-size: 48px;
+                animation: fadeInUp 400ms;
+                
             }
             p#over {
-                margin-top: 8px;
+                margin-top: 16px;
                 grid-column: 1/3;
                 grid-row: 2/3;
+                animation: fadeInUp 800ms;
+                animation-fill-mode: forwards;
+                opacity: 0;
+                animation-delay: 200ms;
             }
             figure {
                 grid-column: 2/3;
                 grid-row: 1/2;
-                background-image: url(../imgs/sjoerdklatserColor.jpg);
-                background-position: center;
+                background-image: url(../imgs/mobileOver.jpg);
+                background-position: right;
                 background-size: cover;
                 background-repeat: no-repeat;
-                margin-top: 24px;
-                border-radius: 4px;
-                background-color: $placeholder;
+                //margin-top: 24px;
+                border-radius: 10px;
+                background-color: transparent;
+                width: 100%;
+                opacity: 1;
+                filter: contrast(.5) brightness(1.3);
+                z-index: -1;
                 img {
                     // box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.1);
                     border-radius: 5px;
@@ -208,6 +141,9 @@ body {
             }
             p {
                 width: 100%;
+            }
+            p:first-of-type {
+                margin-top: 16px;
             }
         }
         .wrapper {
@@ -272,16 +208,16 @@ body {
                             grid-row: 1/2;
                             grid-column: 1/2;
                             //position: absolute;
-                            font-family: 'Catamaran', sans-serif;
-                            color: $black;
-                            font-weight: 600;
+                            font-family: 'Roboto', sans-serif;
+                            color: black;
+                            font-weight: 400;
                             font-size: 12px;
                             margin-top: 4px;
                         }
                         h4 {
                             @extend h3;
                             grid-row: 2/3;
-                            font-weight: 400;
+                            font-weight: 300;
                             position: relative;
                             top: -6px;
                         }

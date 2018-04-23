@@ -30,7 +30,7 @@ function escapeHatch() {
 
 
 function swiperBoi() {
-    var delay = 7500;
+    var delay = 5000;
     var speed = 1000;
     var i = 1;
     var mySwiper = new Swiper('.swiper-container', {
@@ -61,22 +61,6 @@ function swiperBoi() {
         }, speed - 250)
     });
 }
-
-$(window).scroll(function () {
-    var b = document.getElementById('contactButton');
-    if ($(window).scrollTop() + $(window).height() > $(document).height() - 75) {
-        b.style.transformOrigin = 'center';
-        b.style.transitionDuration = '1s';
-        b.style.marginRight = 'calc(50% - 48px)';
-        setTimeout(function () {
-            b.style.transitionDuration = '200ms';
-        }, 1000)
-    } else {
-        b.style.transitionDuration = '400ms';
-        b.style.marginRight = '32px';
-        b.style.transformOrigin = 'bottom right';
-    }
-});
 
 function fade(e) {
     var a = document.getElementsByClassName('navItems');
@@ -162,13 +146,37 @@ function haalNummerOp() {
             var image = data.recenttracks.track[i].image[2]["#text"];
             var link = data.recenttracks.track[i].url;
             containers.children[i].children[0].children[0].innerHTML = track;
-            containers.children[i].children[0].children[2].innerHTML = artiest;
+            containers.children[i].children[0].children[1].innerHTML = artiest;
             containers.children[i].children[1].style.backgroundImage = 'url(' + image + ')';
             containers.children[i].children[1].href = link;
+            var filter = $('#filter > feTurbulence')[0];
+            var basicTimeline = anime.timeline({
+                direction: 'alternate',
+                loop: true,
+                autoplay: true
+            });
+
+            function random() {
+                return Math.random() * .02;
+            }
+            basicTimeline
+                .add({
+                    targets: filter,
+                    baseFrequency: random() + random(),
+                    duration: 2000,
+                    easing: 'easeInQuad',
+                })
+                .add({
+                    targets: filter,
+                    baseFrequency: random() + random(),
+                    duration: 2000,
+                    easing: 'easeInQuad',
+                });
+            $(".placeholder").remove();
+
         }
-        $(".placeholder").remove();
     })
-}
+};
 
 function test() {
 

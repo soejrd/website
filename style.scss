@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Catamaran:300,400|Poppins:400,500,700|Source+Sans+Pro');
+@import url('./style/stylesheet.css');
+@import url('./style/headerDesktop.css');
+@import url('./style/contactDesktop.css');
 $black: #333333;
 $color: #FFCC1E;
 * {
@@ -15,188 +18,6 @@ body {
     grid-template-columns: 1fr 1080px 1fr;
     grid-template-rows: 16.6666% auto;
     overflow-x: hidden;
-    #destroyer {
-        position: fixed;
-        height: 100vh;
-        width: 100vw;
-        background-color: rgba(255, 255, 255, 1);
-        transition-duration: 400ms;
-        display: grid;
-        grid-template-columns: 1fr 2fr 2fr 1fr;
-        visibility: hidden;
-        opacity: 0;
-        .left {
-            grid-column: 2/3;
-            width: 100%;
-            font-family: 'futura_ltbook', sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            height: 75%;
-            a {
-                text-decoration: none;
-                text-transform: none;
-                text-align: left;
-                display: block;
-                color: $black;
-                font-size: 18px;
-                line-height: 48px;
-                transition-duration: 200ms;
-            }
-            a:hover {
-                color: $color;
-            }
-        }
-        .right {
-            grid-column: 3/4;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            #schluss {
-                width: 30px;
-                height: 30px;
-                position: absolute;
-                //background-color: black;
-                top: 5%;
-                right: 4%;
-                background-image: url(./imgs/cross.svg);
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                opacity: 0.15;
-                cursor: pointer;
-            }
-            #schluss:hover {
-                opacity: 0.5;
-            }
-            form {
-                width: 100%;
-                input {
-                    display: block;
-                    width: 100%;
-                    height: 50px;
-                    border-radius: 10px;
-                    border: 1px solid #BDBDBD;
-                    margin-bottom: 24px;
-                    font-family: 'Catamaran', sans-serif;
-                    font-size: 18px;
-                    padding-left: 12px;
-                    color: $black;
-                }
-                textarea {
-                    border: 1px solid #BDBDBD;
-                    border-radius: 10px;
-                    display: block;
-                    width: calc(100% - 12px);
-                    height: 33.33vh;
-                    font-family: 'Catamaran', sans-serif;
-                    font-size: 18px;
-                    color: $black;
-                    padding: 12px;
-                }
-                button {
-                    margin-top: 24px;
-                    width: 30%;
-                    height: 50px;
-                    border-radius: 10px;
-                    background-color: rgba(0, 0, 0, 0.25);
-                    border: none;
-                    color: white;
-                    font-family: 'futura_ltbook', sans-serif;
-                    cursor: pointer;
-                    font-size: 16px;
-                    transition-duration: 200ms;
-                }
-                button:hover {
-                    background-color: rgba(0, 0, 0, 0.5);
-                }
-                 ::placeholder {
-                    color: #bdbdbd;
-                }
-            }
-        }
-    }
-    header {
-        grid-column: 1/4;
-        background-color: white;
-        grid-row: 1/2;
-        box-shadow: 0px 0px 3px rgba(0, 0, 0, .15);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        nav {
-            display: block;
-            width: 66.66%;
-            max-width: 1080px;
-            margin: 0 auto;
-            div.wrapper {
-                grid-row: 2/3;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                margin-bottom: 16px;
-                a {
-                    align-self: flex-start;
-                    //grid-row: 1/2;
-                    font-family: 'futura_ltheavy', sans-serif;
-                    text-decoration: none;
-                    color: $black;
-                    //grid-column: 2/3;
-                    font-size: 36px;
-                    font-weight: 900;
-                    span:first-of-type {
-                        color: $color;
-                    }
-                    span:nth-of-type(2) {
-                        font-family: 'Poppins', sans-serif;
-                        font-size: 14px;
-                        color: #828282;
-                        display: block;
-                        font-weight: 400;
-                    }
-                }
-                a#escapeHatch {
-                    transition-duration: 200ms;
-                    width: 50%;
-                }
-                a#escapeHatch:hover {
-                    color: $color;
-                }
-                ul {
-                    align-self: flex-end;
-                    //grid-column: 2/3;
-                    //grid-row: 1/2;
-                    text-align: right;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: flex-end;
-                    align-items: flex-end;
-                    //margin-top: 4%;
-                    //display: inline;
-                    li {
-                        list-style-type: none;
-                        display: inline;
-                        //float: right;
-                        margin-left: 75px;
-                        //height: 100%;
-                        //bottom: 10px;
-                        a {
-                            transition-duration: 200ms;
-                            font-family: 'Poppins', sans-serif;
-                            font-size: 16px;
-                            text-transform: lowercase;
-                            font-weight: 400;
-                            color: black;
-                        }
-                        a:hover {}
-                    }
-                }
-            }
-        }
-    }
     .swiper-container {
         grid-column: 1/3;
         //max-width: calc(1080px + 33.33vw);
@@ -214,7 +35,7 @@ body {
                 height: 100%;
                 //display: block;
                 background-color: #f2f2f2;
-                background-image: url(./imgs/spacexbanner.png);
+                background-image: url(./imgs/clubber.png);
                 background-size: cover;
                 background-position: right;
                 background-repeat: no-repeat;
@@ -231,16 +52,16 @@ body {
                     h1 {
                         margin-top: 64px;
                         font-family: 'futura_ltheavy', sans-serif;
-                        font-weight: bolder;
+                        font-weight: 400;
                         font-size: 58px;
                         color: $black;
                     }
                     h2 {
                         margin-top: 4px;
                         font-family: 'futura_ltheavy', sans-serif;
-                        font-weight: 600;
+                        font-weight: 400;
                         font-size: 28px;
-                        color: white;
+                        color: rgba(0,0,0,0.25);
                     }
                     p {
                         margin-top: 16px;
@@ -248,7 +69,7 @@ body {
                         font-weight: 300;
                         font-size: 20px;
                         color: $black;
-                        max-width: 30%;
+                        max-width: 35%;
                     }
                     a {
                         text-align: center;
@@ -273,17 +94,22 @@ body {
                 }
             }
             .nr2 {
-                background-image: url(./imgs/graphicDesignBanner.png);
+                background-image: url(./imgs/graphicDesignBanner.jpg);
                 .container {
-                    h1,
-                    p {
-                        color: black;
+                    h2 {
+                        color: $color;
                     }
+                }
+            }
+            .nr3 {
+                background-image: url(./imgs/spacexbanner.png);
+                .container {
                     h2 {
                         color: white;
                     }
                 }
             }
+            
         }
     }
     section.over {
@@ -300,11 +126,11 @@ body {
         .wrapper {
             width: 100%;
             display: grid;
-            grid-template-columns: auto 2fr 1.5fr;
+            grid-template-columns: 2fr 1.5fr;
             grid-template-rows: auto;
             grid-gap: 5vmax;
             .container {
-                grid-column: 2/3;
+                grid-column: 1/2;
                 grid-row: 1/2;
                 h1 {
                     font-family: 'futura_ltbook', sans-serif;
@@ -343,7 +169,7 @@ body {
                 }
             }
             figure {
-                grid-column: 3/4;
+                grid-column: 2/3;
                 grid-row: 1/2;
                 width: 100%;
                 height: 100%;

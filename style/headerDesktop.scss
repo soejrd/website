@@ -8,6 +8,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    z-index: 1;
     nav {
         display: block;
         width: 66.66%;

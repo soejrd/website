@@ -1,10 +1,31 @@
-
 @import url('https://fonts.googleapis.com/css?family=Catamaran:300,400|Lato:400,700,900|Poppins:400,500,700');
-
+@import url(../style/contactDesktop.css);
 @import url(../style/headerDesktop.css);
 $black: #333333;
 $color: #FFCC1E;
 $placeholder: #f2f2f2;
+@keyframes fadeInUp {
+    from {
+        transform: translateY(8px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        transform: translateX(8px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -25,114 +46,6 @@ body {
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 16.6666vh auto;
     overflow-x: hidden;
-    #destroyer {
-        position: fixed;
-        height: 100vh;
-        width: 100vw;
-        background-color: rgba(255, 255, 255, 1);
-        transition-duration: 400ms;
-        display: grid;
-        grid-template-columns: 1fr 2fr 2fr 1fr;
-        visibility: hidden;
-        opacity: 0;
-        .left {
-            grid-column: 2/3;
-            width: 100%;
-            font-family: 'futura_ltbook', sans-serif;;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            height: 75%;
-            a {
-                text-decoration: none;
-                text-transform: none;
-                text-align: left;
-                display: block;
-                color: $black;
-                font-size: 18px;
-                line-height: 48px;
-                transition-duration: 200ms;
-            }
-            a:hover {
-                color: $color;
-            }
-        }
-        .right {
-            grid-column: 3/4;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            #schluss {
-                width: 30px;
-                height: 30px;
-                position: absolute;
-                //background-color: black;
-                top: 5%;
-                right: 4%;
-                background-image: url(../imgs/cross.svg);
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                opacity: 0.15;
-                cursor: pointer;
-            }
-            #schluss:hover {
-                opacity: 0.5;
-            }
-            form {
-                width: 100%;
-                input {
-                    display: block;
-                    width: 100%;
-                    height: 50px;
-                    border-radius: 10px;
-                    border: 1px solid #BDBDBD;
-                    margin-bottom: 24px;
-                    font-family: 'Catamaran', sans-serif;
-                    font-size: 18px;
-                    padding-left: 12px;
-                    color: $black;
-                }
-                textarea {
-                    border: 1px solid #BDBDBD;
-                    border-radius: 10px;
-                    display: block;
-                    width: calc(100% - 12px);
-                    height: 33.33vh;
-                    font-family: 'Catamaran', sans-serif;
-                    font-size: 18px;
-                    color: $black;
-                    padding: 12px;
-                }
-                div#sendButton {
-                    margin-top: 24px;
-                    width: 30%;
-                    height: 50px;
-                    border-radius: 10px;
-                    background-color: rgba(0, 0, 0, 0.25);
-                    border: none;
-                    color: white;
-                    cursor: pointer;
-                    transition-duration: 200ms;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    span {
-                        font-family: 'futura_ltbook', sans-serif;
-                        font-size: 16px;
-                        text-align: center;
-                    }
-                }
-                button:hover {
-                    background-color: rgba(0, 0, 0, 0.5);
-                }
-                 ::placeholder {
-                    color: #bdbdbd;
-                }
-            }
-        }
-    }
     article.over {
         grid-column: 2/3;
         max-width: 1080px;
@@ -145,6 +58,7 @@ body {
             grid-column-gap: 15vmin;
             margin-bottom: 64px;
             h1#overHeader {
+                animation: fadeInUp 400ms;
                 display: inline;
                 grid-row: 1/2;
                 grid-column: 1/3;
@@ -154,7 +68,14 @@ body {
                 color: $black;
                 margin-top: 64px;
             }
+            h1#overHeader:last-of-type {
+                //margin-left: 115px;
+            }
             p#over {
+                animation: fadeInUp 800ms;
+                animation-delay: 200ms;
+                opacity: 0;
+                animation-fill-mode: forwards;
                 margin-top: 8px;
                 text-align: justify;
                 grid-column: 1/2;
@@ -172,7 +93,10 @@ body {
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-color: $placeholder;
-                
+                animation: fadeInRight 800ms;
+                animation-delay: 200ms;
+                animation-fill-mode: forwards;
+                opacity: 0;
                 img {
                     // box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.1);
                     border-radius: 5px;
@@ -201,14 +125,20 @@ body {
                 font-weight: 400;
                 color: $black;
                 margin-bottom: 16px;
+                animation: fadeInUp 800ms;
+                animation-delay: 400ms;
+                animation-fill-mode: forwards;
+                opacity: 0;
             }
             p {
+                animation: fadeInUp 800ms;
                 width: 100%;
                 font-size: 18px;
                 font-family: 'Catamaran', sans-serif;
                 font-weight: 300;
                 color: $black;
                 text-align: justify;
+                
             }
         }
         .wrapper {
@@ -230,7 +160,6 @@ body {
                 justify-content: flex-end;
                 align-items: stretch;
                 align-content: space-between;
-                
                 div {
                     display: flex;
                     flex-direction: column;
@@ -276,7 +205,6 @@ body {
                             font-weight: 600;
                             font-size: 14px;
                             margin-top: 4px;
-                            
                         }
                         h4 {
                             @extend h3;
